@@ -54,7 +54,7 @@ li {
   cursor: pointer;
 }
 
-.i-from {
+.from-vol {
   width: 40px;
   font-size: 18px;
   color: darkgray;
@@ -62,11 +62,28 @@ li {
   border-right: 10px;
 }
 
-.i-to {
+.from-copy {
   width: 40px;
   font-size: 18px;
   color: darkgray;
   justify-content: center;
+  border-right: 10px;
+}
+
+.to-vol {
+  width: 40px;
+  font-size: 18px;
+  color: darkgray;
+  justify-content: center;
+  border-right: 10px;
+}
+
+.to-copy {
+  width: 40px;
+  font-size: 18px;
+  color: darkgray;
+  justify-content: center;
+  border-right: 10px;
 }
 .i-change {
   width: 40px;
@@ -88,10 +105,29 @@ li {
 select {
   border: none;
   outline: none;
-  font-size: 10px;
-  margin: 10px 20px 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 15px 20px 15px 20px;
+  padding: 5px 2px 5px 2px;
+  transition: all 0.3s ease;
 }
 
+select:hover {
+  background-color: #eaeaea;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+option {
+  font-size: 12px;
+  padding: 10px;
+  background-color: #fff;
+  color: #000000;
+}
 button {
   width: 100%;
   padding: 10px;
