@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(101, 170, 239);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 20px #000;
+}
+
+.wrapper {
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+textarea {
+  height: 250px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+}
+.text-input {
+  display: flex;
+  border-bottom: 1px solid;
+}
+
+.from-text {
+  border-right: 1px solid;
+  border-radius: 10px 0px 0px 0px;
+}
+
+.controls,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.i-from {
+  width: 40px;
+  font-size: 18px;
+  color: darkgray;
+  justify-content: center;
+  border-right: 10px;
+}
+
+.i-to {
+  width: 40px;
+  font-size: 18px;
+  color: darkgray;
+  justify-content: center;
+}
+.i-change {
+  width: 40px;
+  font-size: 18px;
+  color: darkgray;
+  justify-content: center;
+}
+
+.row.from .icons {
+  padding-right: 15px;
+  border-right: 1px solid;
+}
+
+.row.to .icons {
+  padding-left: 15px;
+  border-left: 1px solid;
+}
+
+select {
+  border: none;
+  outline: none;
+  font-size: 10px;
+  margin: 10px 20px 10px 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: dodgerblue;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+}
