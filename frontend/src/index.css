@@ -36,6 +36,7 @@ textarea {
   padding: 10px;
   font-size: 18px;
 }
+
 .text-input {
   display: flex;
   border-bottom: 1px solid;
@@ -88,7 +89,7 @@ li {
 .i-change {
   width: 40px;
   font-size: 18px;
-  color: darkgray;
+  color: #000000;
   justify-content: center;
 }
 

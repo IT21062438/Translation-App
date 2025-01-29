@@ -7,6 +7,7 @@ function Translator() {
   const [toText, setToText] = useState("");
   const [fromLanguage, setFromLanguage] = useState("en");
   const [toLanguage, setToLanguage] = useState("fr");
+  const [loading, setLoading] = useState(false);
 
   const handleExchange = () => {
     let tempValue = fromText;
@@ -36,6 +37,30 @@ function Translator() {
     }
   };
 
+  const handleTranslate = () => {
+    if (!fromText.trim()) {
+      alert("Please enter text to translate.");
+      return;
+    }
+    setLoading(true);
+    let url = `https://api.mymemory.translated.net/get?q=${fromText}&langpair=${fromLanguage}|${toLanguage}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setToText(data.responseData.translatedText);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Translation error:", error);
+        alert("An error occurred while translating. Please try again.");
+        setLoading(false);
+      });
+  };
+  const handleClear = () => {
+    setFromText("");
+    setToText("");
+  };
+
   return (
     <div>
       <div className="wrapper">
@@ -43,7 +68,6 @@ function Translator() {
           <textarea
             className="from-text"
             name="from"
-            id="from"
             placeholder="Enter Text"
             value={fromText}
             onChange={(e) => setFromText(e.target.value)}
@@ -51,7 +75,6 @@ function Translator() {
           <textarea
             className="to-text"
             name="to"
-            id="to"
             readOnly
             value={toText}
           ></textarea>
@@ -61,12 +84,10 @@ function Translator() {
             <div className="icons">
               <FaVolumeUp
                 className="from-vol"
-                id="from"
                 onClick={() => handleIconClick("speak", fromText, fromLanguage)}
               />
               <FaCopy
                 className="from-copy"
-                id="from"
                 onClick={() => handleIconClick("copy", fromText)}
               />
             </div>
@@ -101,19 +122,20 @@ function Translator() {
             <div className="icons">
               <FaCopy
                 className="to-vol"
-                id="to"
                 onClick={() => handleIconClick("copy", toText)}
               />
               <FaVolumeUp
                 className="from-copy"
-                id="to"
                 onClick={() => handleIconClick("speak", toText, toLanguage)}
               />
             </div>
           </li>
         </ul>
       </div>
-      <button>Translate</button>
+      <button onClick={handleTranslate}>
+        {loading ? "Translating ..." : "Translate Text"}
+      </button>
+      {fromText && <button onClick={handleClear}>Clear</button>}
     </div>
   );
 }
