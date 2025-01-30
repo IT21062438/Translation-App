@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 700px;
   width: 100%;
   background: white;
   border-radius: 10px;
@@ -172,7 +172,7 @@ button:disabled {
 }
 
 /* Responsive Design */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .text-input {
     flex-direction: column;
   }
@@ -202,5 +202,9 @@ button:disabled {
   .controls li {
     width: 100%;
     justify-content: space-between;
+  }
+  li.change {
+    align-items: center;
+    justify-content: center;
   }
 }
