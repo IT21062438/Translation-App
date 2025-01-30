@@ -37,25 +37,30 @@ function Translator() {
     }
   };
 
-  const handleTranslate = () => {
+  const handleTranslate = async () => {
     if (!fromText.trim()) {
       alert("Please enter text to translate.");
       return;
     }
     setLoading(true);
     let url = `https://api.mymemory.translated.net/get?q=${fromText}&langpair=${fromLanguage}|${toLanguage}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.responseStatus === 200) {
         setToText(data.responseData.translatedText);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Translation error:", error);
-        alert("An error occurred while translating. Please try again.");
-        setLoading(false);
-      });
+      } else {
+        throw new Error(data.responseDetails || "Translation failed");
+      }
+    } catch (error) {
+      console.error("Translation error:", error);
+      alert("An error occurred while translating. Please try again later.");
+    }
+    setLoading(false);
   };
+
   const handleClear = () => {
     setFromText("");
     setToText("");
