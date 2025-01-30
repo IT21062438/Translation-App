@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,108 +14,118 @@ body {
 }
 
 .container {
-  max-width: 700px;
+  max-width: 900px;
   width: 100%;
   background: white;
   border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 10px 20px #000;
+  padding: 35px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  margin: 0px 150px 0px 0px;
 }
 
 .wrapper {
-  border: 1px solid;
+  border: 1px solid #3c3c3c;
   border-radius: 10px;
 }
 
-textarea {
+.text-input {
+  display: flex;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.from-text-container {
+  position: relative;
+  width: 50%;
+  border-right: 1px solid #bebaba;
+}
+
+.from-text {
   height: 250px;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 10px 0 0 0;
   width: 100%;
   resize: none;
   padding: 10px;
   font-size: 18px;
 }
 
-.text-input {
-  display: flex;
-  border-bottom: 1px solid;
+.to-text {
+  height: 250px;
+  border: none;
+  outline: none;
+  border-radius: 0 10px 0 0;
+  width: 50%;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
 }
 
-.from-text {
-  border-right: 1px solid;
-  border-radius: 10px 0px 0px 0px;
+.clear-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #888;
+  font-size: 20px;
+  transition: color 0.3s ease;
 }
 
-.controls,
-li {
+.clear-icon:hover {
+  color: #333;
+}
+
+.controls {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
 }
 
-.from-vol {
-  width: 40px;
-  font-size: 18px;
-  color: darkgray;
-  justify-content: center;
-  border-right: 10px;
+.controls li {
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
-.from-copy {
-  width: 40px;
-  font-size: 18px;
-  color: darkgray;
-  justify-content: center;
-  border-right: 10px;
+.icons {
+  display: flex;
+  gap: 10px;
 }
 
-.to-vol {
-  width: 40px;
-  font-size: 18px;
-  color: darkgray;
-  justify-content: center;
-  border-right: 10px;
-}
-
-.to-copy {
-  width: 40px;
-  font-size: 18px;
-  color: darkgray;
-  justify-content: center;
-  border-right: 10px;
-}
+.from-vol,
+.from-copy,
+.to-vol,
+.to-copy,
 .i-change {
-  width: 40px;
+  cursor: pointer;
+  color: #888;
   font-size: 18px;
-  color: #000000;
-  justify-content: center;
+  transition: color 0.3s ease;
 }
 
-.row.from .icons {
-  padding-right: 15px;
-  border-right: 1px solid;
-}
-
-.row.to .icons {
-  padding-left: 15px;
-  border-left: 1px solid;
+.from-vol:hover,
+.from-copy:hover,
+.to-vol:hover,
+.to-copy:hover,
+.i-change:hover {
+  color: #333;
 }
 
 select {
   border: none;
   outline: none;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
-  margin: 15px 20px 15px 20px;
-  padding: 5px 2px 5px 2px;
+  margin: 0 10px;
+  padding: 5px;
+  background: transparent;
   transition: all 0.3s ease;
 }
 
 select:hover {
-  background-color: #eaeaea;
+  background-color: #f0f0f0;
 }
 
 select:focus {
@@ -124,11 +135,12 @@ select:focus {
 }
 
 option {
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px;
   background-color: #fff;
-  color: #000000;
+  color: #000;
 }
+
 button {
   width: 100%;
   padding: 10px;
@@ -140,4 +152,55 @@ button {
   margin-top: 20px;
   font-size: 18px;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e90ff;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .text-input {
+    flex-direction: column;
+  }
+  .from-text-container {
+    border: none;
+  }
+  .from-text-container,
+  .to-text {
+    width: 100%;
+  }
+
+  .from-text {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .to-text {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .controls li {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

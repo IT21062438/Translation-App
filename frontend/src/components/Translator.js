@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import languages from "./languages";
-import { FaVolumeUp, FaCopy, FaExchangeAlt } from "react-icons/fa";
+import { FaVolumeUp, FaCopy, FaExchangeAlt, FaTimes } from "react-icons/fa";
+import { ClipLoader } from "react-spinners";
 
 function Translator() {
   const [fromText, setFromText] = useState("");
@@ -8,6 +9,7 @@ function Translator() {
   const [fromLanguage, setFromLanguage] = useState("en");
   const [toLanguage, setToLanguage] = useState("fr");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleExchange = () => {
     let tempValue = fromText;
@@ -39,9 +41,10 @@ function Translator() {
 
   const handleTranslate = async () => {
     if (!fromText.trim()) {
-      alert("Please enter text to translate.");
+      setError("Please enter text to translate.");
       return;
     }
+    setError("");
     setLoading(true);
     let url = `https://api.mymemory.translated.net/get?q=${fromText}&langpair=${fromLanguage}|${toLanguage}`;
 
@@ -55,8 +58,8 @@ function Translator() {
         throw new Error(data.responseDetails || "Translation failed");
       }
     } catch (error) {
+      setError("An error occurred while translating. Please try again later.");
       console.error("Translation error:", error);
-      alert("An error occurred while translating. Please try again later.");
     }
     setLoading(false);
   };
@@ -64,19 +67,25 @@ function Translator() {
   const handleClear = () => {
     setFromText("");
     setToText("");
+    setError("");
   };
 
   return (
     <div>
       <div className="wrapper">
         <div className="text-input">
-          <textarea
-            className="from-text"
-            name="from"
-            placeholder="Enter Text"
-            value={fromText}
-            onChange={(e) => setFromText(e.target.value)}
-          ></textarea>
+          <div className="from-text-container">
+            <textarea
+              className="from-text"
+              name="from"
+              placeholder="Enter Text"
+              value={fromText}
+              onChange={(e) => setFromText(e.target.value)}
+            ></textarea>
+            {fromText && (
+              <FaTimes className="clear-icon" onClick={handleClear} />
+            )}
+          </div>
           <textarea
             className="to-text"
             name="to"
@@ -137,10 +146,11 @@ function Translator() {
           </li>
         </ul>
       </div>
-      <button onClick={handleTranslate}>
-        {loading ? "Translating ..." : "Translate Text"}
+      {error && <div className="error-message">{error}</div>}
+      <button onClick={handleTranslate} disabled={loading}>
+        {loading ? <ClipLoader size={12} color="#fff" /> : "Translate Text"}
       </button>
-      {fromText && <button onClick={handleClear}>Clear</button>}
+      {/* {fromText && <button onClick={handleClear}>Clear</button>} */}
     </div>
   );
 }
