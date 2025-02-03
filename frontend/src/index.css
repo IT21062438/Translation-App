@@ -9,14 +9,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(101, 170, 239);
+  background-color: #d0eafd;
   min-height: 100vh;
 }
 
 .container {
   max-width: 700px;
   width: 100%;
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   padding: 35px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -30,7 +30,10 @@ body {
 
 .text-input {
   display: flex;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   border-bottom: 1px solid #3c3c3c;
+  background-color: #f5f5f5;
 }
 
 .from-text-container {
@@ -48,6 +51,7 @@ body {
   resize: none;
   padding: 10px;
   font-size: 18px;
+  background-color: #f5f5f5;
 }
 
 .to-text {
@@ -59,6 +63,7 @@ body {
   resize: none;
   padding: 10px;
   font-size: 18px;
+  background-color: #f5f5f5;
 }
 
 .clear-icon {
@@ -110,11 +115,12 @@ body {
 .to-vol:hover,
 .to-copy:hover,
 .i-change:hover {
-  color: #333;
+  color: #000000;
 }
 
 select {
   border: none;
+  border-radius: 5px;
   outline: none;
   font-size: 14px;
   cursor: pointer;
@@ -130,7 +136,7 @@ select:hover {
 
 select:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #1565c0;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
@@ -146,8 +152,8 @@ button {
   padding: 10px;
   border: none;
   outline: none;
-  color: white;
-  background-color: dodgerblue;
+  color: #ffffff;
+  background-color: #1976d2;
   cursor: pointer;
   margin-top: 20px;
   font-size: 18px;
@@ -156,12 +162,14 @@ button {
 }
 
 button:hover {
-  background-color: #1e90ff;
+  background-color: #1565c0;
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #b0bec5;
+  color: #757575;
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .error-message {
