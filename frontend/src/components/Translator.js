@@ -72,7 +72,9 @@ function Translator() {
 
   return (
     <div>
-      <h1 className="translator-heading">Type, Translate & Listen Like a Native</h1>
+      <h1 className="translator-heading">
+        Type, Translate & Listen Like a Native
+      </h1>
       <div className="wrapper">
         <div className="text-input">
           <div className="from-text-container">
@@ -90,6 +92,7 @@ function Translator() {
           <textarea
             className="to-text"
             name="to"
+            placeholder="Translation"
             readOnly
             value={toText}
           ></textarea>
