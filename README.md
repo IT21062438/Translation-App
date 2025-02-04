@@ -29,9 +29,9 @@ Other Dependencies: react-dom, react-icons, react-scripts, react-spinners
 You can follow these steps and type in command prompt to set up and run the project on your local machine.
 
 #### 1️⃣ Clone the Repository<br>
-      git clone https://github.com/your-username/your-project.git
+      git clone https://github.com/IT21062438/Translation-App.git
       
-      cd your-project
+      cd Translation-App
 
 #### 2️⃣ Install Dependencies<br>
       npm install
