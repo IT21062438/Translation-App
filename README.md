@@ -26,10 +26,11 @@ Other Dependencies: react-dom, react-icons, react-scripts, react-spinners
 
 ### 🛠️ Installation & Setup
 
-You can follow these steps to set up and run the project on your local machine.
+You can follow these steps and type in command prompt to set up and run the project on your local machine.
 
 #### 1️⃣ Clone the Repository<br>
       git clone https://github.com/your-username/your-project.git
+      
       cd your-project
 
 #### 2️⃣ Install Dependencies<br>
