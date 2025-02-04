@@ -50,7 +50,7 @@ You can follow these steps and type in command prompt to set up and run the proj
 https://github.com/user-attachments/assets/fb9d73e9-6ffa-4b2b-a0d2-f65c25bc4981
  
 
-#### 🔗 Live : https://your-app-url.com
+#### 🔗 Live : https://translation-app-kappa-six.vercel.app/
 
 <br>
 
