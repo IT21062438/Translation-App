@@ -3,7 +3,7 @@
 ### 📌 Project Description
 
 This React-based text translation app allows users to enter text, select languages, translate the text, and listen to the translated speech. Its intuitive interface ensures seamless translation and speech output.  
-<br><br>
+<br>
 ### 🚀 Features
 
 🌍 Text Translation – Supports multiple languages for accurate translation.
@@ -12,7 +12,8 @@ This React-based text translation app allows users to enter text, select languag
 
 🔄 Language Switching – Easily change input and output languages.
 
-<br><br>
+<br>
+
 ### ⚙️ Technology Stack
 
 Frontend: React.js, CSS
@@ -21,7 +22,8 @@ API: MyMemory Translation API
 
 Other Dependencies: react-dom, react-icons, react-scripts, react-spinners
 
-<br><br>
+<br>
+
 ### 🛠️ Installation & Setup
 
 You can follow these steps to set up and run the project on your local machine.
@@ -37,12 +39,14 @@ You can follow these steps to set up and run the project on your local machine.
        npm start
       
 
-<br><br>
+<br>
+
 ### 🌍 Deployment
 
 #### 🔗 Live Demo: https://your-app-url.com
 
-<br><br>
+<br>
+
 ### 🙌 Contact & Acknowledgments
 
 For any inquiries, reach out via GitHub or email.<br><br>
