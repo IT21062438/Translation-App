@@ -71,7 +71,7 @@ function Translator() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1 className="translator-heading">
         Type, Translate & Listen Like a Native
       </h1>
