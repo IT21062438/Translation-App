@@ -31,14 +31,15 @@ You can follow these steps and type in command prompt to set up and run the proj
 #### 1️⃣ Clone the Repository<br>
       git clone https://github.com/IT21062438/Translation-App.git
       
-      cd Translation-App
+#### 2️⃣ Navigate to the Project Directory<br>      
+      cd Translation-App/frontend
 
-#### 2️⃣ Install Dependencies<br>
+#### 3️⃣ Install Dependencies<br>
       npm install
 
-#### 3️⃣ Run the Project<br>
+#### 4️⃣ Run the Project<br>
        npm start
-      
+    
 
 <br>
 
@@ -50,8 +51,7 @@ You can follow these steps and type in command prompt to set up and run the proj
 
 ### 🙌 Contact & Acknowledgments
 
-For any inquiries, reach out via GitHub or email.<br><br>
-GitHub: your-github-profile<br>
+For any inquiries, reach out via email.<br><br>
 Email: samarawickramaharendra@gmail.com<br><br>
 
 ### Special thanks to the libraries and APIs used in this project!
